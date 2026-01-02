@@ -163,7 +163,6 @@ footer h3 { color: #fff; margin-bottom: 10px; font-size: 1.3rem; }
 }
 
 @media (max-width: 768px) { 
-    /* 헤더 수정: 로고와 메뉴를 위아래로 배치하여 폭 확보 */
     header .container { flex-direction: column; gap: 15px; }
     header nav { margin-left: 0; }
     header nav ul li { margin-left: 10px; margin-right: 10px; font-size: 0.9rem; }
@@ -171,7 +170,6 @@ footer h3 { color: #fff; margin-bottom: 10px; font-size: 1.3rem; }
     header h1 { font-size: 1.1rem; } 
     .hero h2 { font-size: 1.8rem; } 
     
-    /* 버튼 여백 발생 원인 차단 */
     .hero-btn { min-width: 0 !important; width: 100%; max-width: 280px; margin: 0 auto; }
     
     .card-identity h4 { font-size: 1.6rem; }
