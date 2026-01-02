@@ -14,7 +14,7 @@ body {
 a { text-decoration: none; transition: 0.3s; color: inherit; }
 ul { list-style: none; }
 
-/* 헤더 - 모바일 여백 문제 해결 */
+/* 헤더 */
 header { background: #fff; border-bottom: 2px solid #002c5f; padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); width: 100%; }
 header .container { display: flex; justify-content: space-between; align-items: center; }
 header h1 { font-size: 1.4rem; font-weight: 700; flex-shrink: 0; }
@@ -43,11 +43,18 @@ header nav ul li a:hover { color: #d4af37; }
 .section-title { font-size: 2.2rem; margin-bottom: 50px; color: #002c5f; text-align: center; position: relative; padding-bottom: 15px; }
 .section-title::after { content: ''; width: 45px; height: 3px; background: #d4af37; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
 
-/* 인사말 - 자연스러운 흐름 */
+/* 인사말 - 수정: 양쪽 정렬(Justify) 적용하여 꽉 찬 문단 구현 */
 .about { padding: 80px 0; background: #fff; }
 .about-content { max-width: 850px; margin: 0 auto; }
 .greeting-text .main-greeting { font-size: 1.4rem; font-weight: 700; color: #002c5f; text-align: center; margin-bottom: 30px; }
-.greeting-text .unified-paragraph { font-size: 1.1rem; text-align: left; line-height: 1.8; margin-bottom: 20px; }
+.greeting-text .unified-paragraph { 
+    font-size: 1.1rem; 
+    line-height: 1.9; 
+    margin-bottom: 20px; 
+    text-align: justify; /* 양쪽 정렬 */
+    text-justify: inter-character; /* 글자 간격 조정으로 문단 끝 맞춤 */
+    word-break: keep-all; 
+}
 .signature { text-align: right; margin-top: 40px; padding-top: 25px; border-top: 1px solid #eee; }
 .signature span { display: block; margin-bottom: 5px; }
 .name-wrap { white-space: nowrap; display: inline-block; font-size: 1.8rem; color: #002c5f; letter-spacing: 4px; font-weight: 700; }
@@ -69,10 +76,15 @@ header nav ul li a:hover { color: #d4af37; }
 .location-btns { display: flex; gap: 10px; margin-top: 20px; }
 .location-btns .btn-main, .location-btns .btn-kakao-main { flex: 1; padding: 12px 5px; font-size: 0.9rem; }
 
-/* 푸터 - 수직 배열 고정 */
+/* 푸터 - 수정: 모바일에서도 무조건 한 줄 유지 */
 footer { background: #1a1a1a; color: #999; padding: 40px 0; text-align: center; }
 footer h3 { color: #fff; margin-bottom: 15px; font-size: 1.2rem; }
-.footer-info p { margin-bottom: 5px; font-size: 0.85rem; color: #888; }
+.footer-info .footer-line { 
+    margin-bottom: 5px; 
+    font-size: 0.85rem; 
+    color: #888; 
+    white-space: nowrap; /* 자동 줄바꿈 방지 */
+}
 .footer-info .copy { margin-top: 15px; color: #666; font-size: 0.8rem; }
 
 /* 애니메이션 */
@@ -95,16 +107,21 @@ footer h3 { color: #fff; margin-bottom: 15px; font-size: 1.2rem; }
     .btn-main, .btn-kakao-main { width: 100%; max-width: 260px; } 
 
     .greeting-text .main-greeting { font-size: 1.1rem; }
-    .greeting-text .unified-paragraph { font-size: 1rem; line-height: 1.7; text-align: left; }
+    /* 모바일에서도 양쪽 정렬 유지 */
+    .greeting-text .unified-paragraph { font-size: 1rem; line-height: 1.7; text-align: justify; }
     .signature strong { font-size: 1.5rem; }
     
     .service-grid { grid-template-columns: 1fr; }
     .location-container { flex-direction: column; }
     .location-btns { flex-direction: row; }
+
+    /* 모바일에서 푸터 정보가 잘리지 않게 폰트 크기 미세 조절 */
+    .footer-info .footer-line { font-size: 0.75rem; }
 }
 
-/* 초소형 모바일 대응 */
+/* 초소형 모바일 대응 (아이폰 13 미니 등) */
 @media (max-width: 360px) {
     header h1 { font-size: 0.95rem; }
     header nav ul li { margin-left: 5px; font-size: 0.75rem; }
+    .footer-info .footer-line { font-size: 0.65rem; }
 }
