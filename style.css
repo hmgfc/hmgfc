@@ -23,7 +23,7 @@ header nav ul { display: flex; align-items: center; }
 header nav ul li { margin-left: 20px; font-weight: 500; white-space: nowrap; }
 header nav ul li a:hover { color: #d4af37; }
 
-/* 메인 비주얼 */
+/* 메인 비주얼 (Hero) */
 .hero { background: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover; height: 600px; color: #fff; text-align: center; }
 .hero-overlay { background: rgba(0, 15, 45, 0.65); height: 100%; display: flex; align-items: center; }
 .hero h2 { font-size: 3rem; margin-bottom: 20px; font-weight: 700; text-shadow: 2px 2px 10px rgba(0,0,0,0.4); }
@@ -39,11 +39,11 @@ header nav ul li a:hover { color: #d4af37; }
 .btn-kakao-main { background: #fee500; color: #3c1e1e; }
 .btn-kakao-main:hover { background: #fada00; transform: translateY(-3px); }
 
-/* 섹션 공통 */
+/* 섹션 공통 타이틀 */
 .section-title { font-size: 2.2rem; margin-bottom: 50px; color: #002c5f; text-align: center; position: relative; padding-bottom: 15px; }
 .section-title::after { content: ''; width: 45px; height: 3px; background: #d4af37; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
 
-/* 인사말 - 왼쪽 정렬(left)로 수정 */
+/* 인사말 (어제 최종: 왼쪽 정렬 적용) */
 .about { padding: 80px 0; background: #fff; }
 .about-content { max-width: 850px; margin: 0 auto; }
 .greeting-text .main-greeting { font-size: 1.4rem; font-weight: 700; color: #002c5f; text-align: center; margin-bottom: 30px; }
@@ -51,17 +51,30 @@ header nav ul li a:hover { color: #d4af37; }
     font-size: 1.1rem; 
     line-height: 1.9; 
     margin-bottom: 20px; 
-    text-align: left; /* 왼쪽 정렬 적용 */
+    text-align: left; /* 왼쪽 정렬 */
     word-break: keep-all; 
 }
 .signature { text-align: right; margin-top: 40px; padding-top: 25px; border-top: 1px solid #eee; }
 .signature span { display: block; margin-bottom: 5px; }
 .name-wrap { white-space: nowrap; display: inline-block; font-size: 1.8rem; color: #002c5f; letter-spacing: 4px; font-weight: 700; }
 
-/* 주요 업무 */
+/* 주요 업무 (복구: 호버 애니메이션 추가) */
 .services { padding: 100px 0; background: #f9f9fb; }
 .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-.service-item { background: #fff; padding: 40px 30px; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.06); text-align: center; }
+.service-item { 
+    background: #fff; 
+    padding: 40px 30px; 
+    border-radius: 12px; 
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06); 
+    text-align: center; 
+    transition: 0.3s ease; /* 애니메이션 속도 */
+    border-top: 4px solid transparent; 
+}
+.service-item:hover { 
+    transform: translateY(-10px); /* 볼록 올라오는 효과 */
+    border-top: 4px solid #002c5f; /* 상단 포인트 라인 */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12); 
+}
 .service-item .icon { font-size: 3rem; margin-bottom: 25px; display: block; }
 
 /* 오시는 길 */
@@ -73,7 +86,7 @@ header nav ul li a:hover { color: #d4af37; }
 .location-info { flex: 1; }
 .info-item { margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
 
-/* 연락처 링크 스타일 */
+/* 연락처 링크 (어제 최종: 밑줄 제거/볼드 제거) */
 .contact-link { 
     text-decoration: none !important; 
     font-weight: 400; 
@@ -86,19 +99,8 @@ header nav ul li a:hover { color: #d4af37; }
 /* 푸터 */
 footer { background: #1a1a1a; color: #999; padding: 30px 0; text-align: center; }
 footer h3 { color: #fff; margin-bottom: 8px; font-size: 1.2rem; }
-.footer-info .footer-line { 
-    margin-bottom: 2px; 
-    font-size: 0.85rem; 
-    color: #888; 
-    white-space: nowrap; 
-    line-height: 1.2; 
-}
-.footer-info .copy { 
-    margin-top: 4px; 
-    color: #666; 
-    font-size: 0.8rem; 
-    line-height: 1.2; 
-}
+.footer-info .footer-line { margin-bottom: 2px; font-size: 0.85rem; color: #888; white-space: nowrap; line-height: 1.2; }
+.footer-info .copy { margin-top: 4px; color: #666; font-size: 0.8rem; line-height: 1.2; }
 
 /* 애니메이션 */
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -109,29 +111,12 @@ footer h3 { color: #fff; margin-bottom: 8px; font-size: 1.2rem; }
 
 /* 반응형 모바일 */
 @media (max-width: 768px) { 
-    header .container { padding: 0 10px; }
     header h1 { font-size: 1.1rem; } 
-    header nav { margin-left: 5px; }
     header nav ul li { margin-left: 8px; font-size: 0.85rem; }
-
     .hero h2 { font-size: 1.7rem; } 
-    .hero p { font-size: 1rem; line-height: 1.6; }
     .hero-btns { flex-direction: column; align-items: center; } 
     .btn-main, .btn-kakao-main { width: 100%; max-width: 260px; } 
-
-    .greeting-text .unified-paragraph { font-size: 1rem; line-height: 1.7; text-align: left; }
-    .signature strong { font-size: 1.5rem; }
-    
     .service-grid { grid-template-columns: 1fr; }
     .location-container { flex-direction: column; }
     .location-btns { flex-direction: row; }
-
-    .footer-info .footer-line { font-size: 0.75rem; margin-bottom: 1px; }
-    .footer-info .copy { margin-top: 2px; }
-}
-
-@media (max-width: 360px) {
-    header h1 { font-size: 0.95rem; }
-    header nav ul li { margin-left: 5px; font-size: 0.75rem; }
-    .footer-info .footer-line { font-size: 0.65rem; }
 }
