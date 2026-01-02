@@ -6,8 +6,8 @@ body {
     font-family: 'Noto Sans KR', sans-serif; 
     line-height: 1.6; 
     color: #444; 
-    word-break: keep-all; /* 단어 단위 줄바꿈 */
-    overflow-x: hidden; /* 우측 흰 여백 방지 */
+    word-break: keep-all; 
+    overflow-x: hidden; 
     width: 100%;
 }
 .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
@@ -43,7 +43,7 @@ header nav ul li a:hover { color: #d4af37; }
 .section-title { font-size: 2.2rem; margin-bottom: 50px; color: #002c5f; text-align: center; position: relative; padding-bottom: 15px; }
 .section-title::after { content: ''; width: 45px; height: 3px; background: #d4af37; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
 
-/* 인사말 - 수정: 양쪽 정렬(Justify) 적용하여 꽉 찬 문단 구현 */
+/* 인사말 - 양쪽 정렬 */
 .about { padding: 80px 0; background: #fff; }
 .about-content { max-width: 850px; margin: 0 auto; }
 .greeting-text .main-greeting { font-size: 1.4rem; font-weight: 700; color: #002c5f; text-align: center; margin-bottom: 30px; }
@@ -51,8 +51,8 @@ header nav ul li a:hover { color: #d4af37; }
     font-size: 1.1rem; 
     line-height: 1.9; 
     margin-bottom: 20px; 
-    text-align: justify; /* 양쪽 정렬 */
-    text-justify: inter-character; /* 글자 간격 조정으로 문단 끝 맞춤 */
+    text-align: justify; 
+    text-justify: inter-character; 
     word-break: keep-all; 
 }
 .signature { text-align: right; margin-top: 40px; padding-top: 25px; border-top: 1px solid #eee; }
@@ -73,19 +73,30 @@ header nav ul li a:hover { color: #d4af37; }
 .btn-kakao { background: #fee500; color: #3c1e1e; padding: 12px 25px; border-radius: 5px; font-weight: bold; margin-top: 15px; }
 .location-info { flex: 1; }
 .info-item { margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+
+/* 카카오톡 아이디 링크 스타일 - 밑줄 제거 */
+.kakao-id-link { color: #3c1e1e; text-decoration: none; }
+.kakao-id-link:hover { color: #002c5f; }
+
 .location-btns { display: flex; gap: 10px; margin-top: 20px; }
 .location-btns .btn-main, .location-btns .btn-kakao-main { flex: 1; padding: 12px 5px; font-size: 0.9rem; }
 
-/* 푸터 - 수정: 모바일에서도 무조건 한 줄 유지 */
-footer { background: #1a1a1a; color: #999; padding: 40px 0; text-align: center; }
-footer h3 { color: #fff; margin-bottom: 15px; font-size: 1.2rem; }
+/* 푸터 - 줄 간격 축소 */
+footer { background: #1a1a1a; color: #999; padding: 30px 0; text-align: center; }
+footer h3 { color: #fff; margin-bottom: 8px; font-size: 1.2rem; }
 .footer-info .footer-line { 
-    margin-bottom: 5px; 
+    margin-bottom: 2px; 
     font-size: 0.85rem; 
     color: #888; 
-    white-space: nowrap; /* 자동 줄바꿈 방지 */
+    white-space: nowrap; 
+    line-height: 1.2; 
 }
-.footer-info .copy { margin-top: 15px; color: #666; font-size: 0.8rem; }
+.footer-info .copy { 
+    margin-top: 4px; 
+    color: #666; 
+    font-size: 0.8rem; 
+    line-height: 1.2; 
+}
 
 /* 애니메이션 */
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -94,7 +105,7 @@ footer h3 { color: #fff; margin-bottom: 15px; font-size: 1.2rem; }
 .delay-2 { animation-delay: 0.6s; }
 .delay-3 { animation-delay: 0.9s; }
 
-/* 반응형 모바일 (갤럭시 폴드, 아이폰 미니 대응) */
+/* 반응형 모바일 */
 @media (max-width: 768px) { 
     header .container { padding: 0 10px; }
     header h1 { font-size: 1.1rem; } 
@@ -106,8 +117,6 @@ footer h3 { color: #fff; margin-bottom: 15px; font-size: 1.2rem; }
     .hero-btns { flex-direction: column; align-items: center; } 
     .btn-main, .btn-kakao-main { width: 100%; max-width: 260px; } 
 
-    .greeting-text .main-greeting { font-size: 1.1rem; }
-    /* 모바일에서도 양쪽 정렬 유지 */
     .greeting-text .unified-paragraph { font-size: 1rem; line-height: 1.7; text-align: justify; }
     .signature strong { font-size: 1.5rem; }
     
@@ -115,11 +124,10 @@ footer h3 { color: #fff; margin-bottom: 15px; font-size: 1.2rem; }
     .location-container { flex-direction: column; }
     .location-btns { flex-direction: row; }
 
-    /* 모바일에서 푸터 정보가 잘리지 않게 폰트 크기 미세 조절 */
-    .footer-info .footer-line { font-size: 0.75rem; }
+    .footer-info .footer-line { font-size: 0.75rem; margin-bottom: 1px; }
+    .footer-info .copy { margin-top: 2px; }
 }
 
-/* 초소형 모바일 대응 (아이폰 13 미니 등) */
 @media (max-width: 360px) {
     header h1 { font-size: 0.95rem; }
     header nav ul li { margin-left: 5px; font-size: 0.75rem; }
