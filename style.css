@@ -1,20 +1,20 @@
-/* [1] 기본 설정 및 여백 방지 최종 방어선 */
+/* 기본 설정 */
 html { scroll-behavior: smooth; }
-* { margin: 0; padding: 0; box-sizing: border-box; max-width: 100%; } /* 모든 요소의 폭을 100%로 제한 */
+* { margin: 0; padding: 0; box-sizing: border-box; max-width: 100%; }
 
 body { 
     font-family: 'Noto Sans KR', sans-serif; 
     line-height: 1.6; 
     color: #444; 
     word-break: keep-all; 
-    overflow-x: hidden; /* 가로 스크롤 방지 */
+    overflow-x: hidden; 
     width: 100%;
 }
 .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; width: 100%; }
 a { text-decoration: none; transition: 0.3s; color: inherit; }
 ul { list-style: none; }
 
-/* 헤더 & 로고 */
+/* 헤더 & 로고 (PC용) */
 header { background: #fff; border-bottom: 2px solid #002c5f; padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); width: 100%; }
 header .container { display: flex; justify-content: space-between; align-items: center; }
 header h1 { font-size: 1.3rem; font-weight: 700; flex-shrink: 0; }
@@ -153,10 +153,9 @@ footer h3 { color: #fff; margin-bottom: 10px; font-size: 1.3rem; }
 .delay-2 { animation-delay: 0.6s; }
 .delay-3 { animation-delay: 0.9s; }
 
-/* [2] 모바일 여백 완전 차단 수정 (기존 디자인 수치 보존) */
+/* [반응형 수정 - 모바일 여백 문제 해결] */
 @media (max-width: 992px) {
-    .container { overflow: hidden; } /* 컨테이너 밖으로 나가는 것 차단 */
-    .service-grid { grid-template-columns: 1fr; } /* 그리드 수동 조정 */
+    .service-grid { grid-template-columns: 1fr; }
     .location-container { flex-direction: column; }
     .biz-card { flex-direction: column; min-height: auto; }
     .card-left { border-right: none; border-bottom: 1px solid #eee; padding: 30px 20px; }
@@ -164,10 +163,17 @@ footer h3 { color: #fff; margin-bottom: 10px; font-size: 1.3rem; }
 }
 
 @media (max-width: 768px) { 
+    /* 헤더 수정: 로고와 메뉴를 위아래로 배치하여 폭 확보 */
+    header .container { flex-direction: column; gap: 15px; }
+    header nav { margin-left: 0; }
+    header nav ul li { margin-left: 10px; margin-right: 10px; font-size: 0.9rem; }
+
     header h1 { font-size: 1.1rem; } 
     .hero h2 { font-size: 1.8rem; } 
-    /* Hero 버튼의 min-width가 여백의 주범이므로 모바일에서만 해제 */
-    .hero-btn { min-width: 0 !important; width: 100%; max-width: 260px; margin: 0 auto; }
+    
+    /* 버튼 여백 발생 원인 차단 */
+    .hero-btn { min-width: 0 !important; width: 100%; max-width: 280px; margin: 0 auto; }
+    
     .card-identity h4 { font-size: 1.6rem; }
-    .name-wrap { font-size: 1.5rem; letter-spacing: 2px; } /* 이름이 길어 밀리는 경우 방지 */
+    .name-wrap { font-size: 1.5rem; letter-spacing: 2px; }
 }
