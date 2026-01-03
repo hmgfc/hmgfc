@@ -32,7 +32,7 @@ header nav ul li a:hover { color: #d4af37; }
 .hero p { font-size: 1.5rem; margin-bottom: 35px; padding: 0 10px; line-height: 1.5; font-weight: 400; }
 .hero p strong { color: #fff; font-weight: 700; }
 
-/* 강조 효과: 기존 사이트에서 사용한 금색 톤(#d4af37) 적용 */
+/* 강조 효과: 금색 톤(#d4af37) */
 .highlight { color: #d4af37; }
 
 /* 공통 버튼 스타일 */
@@ -84,63 +84,46 @@ header nav ul li a:hover { color: #d4af37; }
 
 .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); display: flex; justify-content: center; align-items: center; z-index: 2000; opacity: 0; pointer-events: none; transition: 0.3s; }
 .modal-overlay.active { opacity: 1; pointer-events: auto; }
-.modal-content { background: #fff; width: 90%; max-width: 500px; padding: 40px; border-radius: 15px; position: relative; transform: translateY(20px); transition: 0.3s; }
+.modal-content { background: #fff; width: 95%; max-width: 600px; padding: 40px; border-radius: 15px; position: relative; transform: translateY(20px); transition: 0.3s; max-height: 90vh; overflow-y: auto; }
 .modal-overlay.active .modal-content { transform: translateY(0); }
 .close-modal { position: absolute; top: 15px; right: 20px; font-size: 2rem; border: none; background: none; cursor: pointer; color: #999; }
-#modal-body h3 { color: #002c5f; margin-bottom: 20px; border-bottom: 2px solid #d4af37; display: inline-block; padding-bottom: 5px; font-size: 1.4rem; }
+
+#modal-body h3 { color: #002c5f; margin-bottom: 25px; border-bottom: 2px solid #d4af37; display: inline-block; padding-bottom: 5px; font-size: 1.5rem; }
+.modal-section { margin-bottom: 25px; }
+.modal-sub-title { font-size: 1.1rem; color: #002c5f; margin-bottom: 12px; font-weight: 700; }
+.modal-list { list-style: none; padding-left: 5px; }
+.modal-list li { margin-bottom: 10px; line-height: 1.7; color: #555; position: relative; padding-left: 20px; text-align: left; }
+ol.modal-list { counter-reset: item; }
+ol.modal-list li { padding-left: 25px; }
+ol.modal-list li::before { content: counter(item) ". "; counter-increment: item; position: absolute; left: 0; color: #d4af37; font-weight: 700; }
+ul.modal-list li::before { content: "•"; position: absolute; left: 0; color: #d4af37; font-weight: 700; }
 #modal-body p { line-height: 1.8; color: #555; text-align: justify; }
 
 /* 디지털 명함 */
 .location { padding: 100px 0; background: #fff; }
 .location-container { display: flex; gap: 40px; align-items: stretch; }
 .biz-card-area { flex: 1.5; display: flex; align-items: center; }
-.biz-card { 
-    width: 100%; 
-    background: #002c5f; 
-    color: #fff; 
-    border-radius: 15px; 
-    display: flex; 
-    overflow: hidden; 
-    box-shadow: 0 10px 30px rgba(0, 44, 95, 0.2);
-    min-height: 320px;
-}
-.card-left { 
-    flex: 1; 
-    background: #fff; 
-    color: #002c5f; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center; padding: 30px; border-right: 1px solid #eee;
-}
+.biz-card { width: 100%; background: #002c5f; color: #fff; border-radius: 15px; display: flex; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 44, 95, 0.2); min-height: 320px; }
+.card-left { flex: 1; background: #fff; color: #002c5f; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 30px; border-right: 1px solid #eee; }
 .card-logo { width: 80px; margin-bottom: 15px; }
 .card-company { display: block; font-size: 0.9rem; font-weight: 500; color: #666; margin-bottom: 5px; }
 .card-identity h4 { font-size: 1.8rem; margin-bottom: 3px; letter-spacing: 2px; font-weight: 700; }
 .card-job { font-size: 0.95rem; color: #d4af37; font-weight: 700; }
-
-.card-right { 
-    flex: 1.8; padding: 40px; display: flex; flex-direction: column; justify-content: center; gap: 30px;
-    background: linear-gradient(135deg, #002c5f 0%, #00408a 100%);
-}
+.card-right { flex: 1.8; padding: 40px; display: flex; flex-direction: column; justify-content: center; gap: 30px; background: linear-gradient(135deg, #002c5f 0%, #00408a 100%); }
 .specs-title { font-size: 0.85rem; color: #d4af37; margin-bottom: 12px; font-weight: 700; letter-spacing: 1px; }
 .card-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .card-specs li { font-size: 1rem; opacity: 0.95; }
-
 .card-contacts { display: flex; flex-direction: column; gap: 8px; }
 .card-contacts li { font-size: 1.1rem; font-weight: 400; }
 .card-contacts .label { display: inline-block; width: 65px; font-weight: 700; color: #d4af37; }
 
-/* 오른쪽 상담 박스 */
+/* 상담 박스 */
 .location-info { flex: 1; display: flex; flex-direction: column; gap: 20px; justify-content: center; }
 .info-item { padding: 25px; background: #fdfdfd; border: 1px solid #eee; border-radius: 10px; }
 .contact-box { border-left: 5px solid #002c5f; }
 .contact-box strong { display: block; font-size: 1.2rem; margin-bottom: 8px; color: #002c5f; }
 .btn-desc { font-size: 0.9rem; color: #888; margin-bottom: 15px; }
-
-.contact-btn {
-    width: 100%; display: flex; justify-content: center; align-items: center; gap: 10px; padding: 15px;
-    font-size: 1.15rem; border-radius: 6px; font-weight: 700;
-}
+.contact-btn { width: 100%; display: flex; justify-content: center; align-items: center; gap: 10px; padding: 15px; font-size: 1.15rem; border-radius: 6px; font-weight: 700; }
 .btn-call-text { font-size: 0.9rem; background: rgba(255, 255, 255, 0.2); padding: 2px 10px; border-radius: 4px; margin-left: 5px; font-weight: 400; }
 
 /* 푸터 */
@@ -155,24 +138,12 @@ footer h3 { color: #fff; margin-bottom: 10px; font-size: 1.3rem; }
     .location-container { flex-direction: column; }
     .biz-card { flex-direction: column; min-height: auto; }
     .card-left { border-right: none; border-bottom: 1px solid #eee; padding: 30px 20px; }
-    .card-right { padding: 30px 20px; }
 }
-
 @media (max-width: 768px) { 
     header .container { flex-direction: column; gap: 15px; }
-    header nav { margin-left: 0; }
     header nav ul li { margin-left: 10px; margin-right: 10px; font-size: 0.9rem; }
-    header h1 { font-size: 1.1rem; } 
     .hero h2 { font-size: 1.8rem; } 
     .hero p { font-size: 1.2rem; }
-    .hero-btn { min-width: 0 !important; width: 100%; max-width: 280px; margin: 0 auto; }
-    
-    .greeting-text .unified-paragraph { 
-        text-align: left; 
-        line-height: 1.8; 
-        font-size: 1.05rem;
-    }
-    
-    .card-identity h4 { font-size: 1.6rem; }
+    .hero-btn { width: 100%; max-width: 280px; margin: 0 auto; }
     .name-wrap { font-size: 1.5rem; letter-spacing: 2px; }
 }
