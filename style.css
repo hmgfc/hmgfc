@@ -25,12 +25,26 @@ header nav ul { display: flex; align-items: center; }
 header nav ul li { margin-left: 20px; font-weight: 500; white-space: nowrap; }
 header nav ul li a:hover { color: #d4af37; }
 
-/* Hero 섹션 */
+/* Hero 섹션 및 애니메이션 정의 */
 .hero { background: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover; height: 600px; color: #fff; text-align: center; }
 .hero-overlay { background: rgba(0, 15, 45, 0.65); height: 100%; display: flex; align-items: center; }
 .hero h2 { font-size: 2.8rem; margin-bottom: 20px; font-weight: 700; text-shadow: 2px 2px 10px rgba(0,0,0,0.4); line-height: 1.5; }
 .hero p { font-size: 1.5rem; margin-bottom: 35px; padding: 0 10px; line-height: 1.5; font-weight: 400; }
 .hero p strong { color: #fff; font-weight: 700; }
+
+/* 애니메이션 핵심 코드 */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-up {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
 
 /* 강조 효과: 금색 톤(#d4af37) */
 .highlight { color: #d4af37; }
