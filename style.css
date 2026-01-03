@@ -62,7 +62,6 @@ header nav ul li a:hover { color: #d4af37; }
 .about-content { max-width: 850px; margin: 0 auto; }
 .greeting-text .main-greeting { font-size: 1.4rem; font-weight: 700; color: #002c5f; text-align: center; margin-bottom: 30px; }
 .greeting-text .unified-paragraph { font-size: 1.1rem; line-height: 2.0; margin-bottom: 20px; text-align: justify; word-break: keep-all; }
-/* 감사합니다 텍스트 - 상단 문단과 동일한 스타일 적용 (볼드 제거) */
 .thanks-text { margin-top: 15px; font-weight: inherit; } 
 
 .signature { text-align: right; margin-top: 40px; padding-top: 25px; border-top: 1px solid #eee; }
@@ -75,6 +74,18 @@ header nav ul li a:hover { color: #d4af37; }
 .service-item { background: #fff; padding: 40px 30px; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.06); text-align: center; transition: 0.3s ease; border-top: 4px solid transparent; }
 .service-item:hover { transform: translateY(-10px); border-top: 4px solid #002c5f; box-shadow: 0 15px 35px rgba(0,0,0,0.12); }
 .service-item .icon { font-size: 3rem; margin-bottom: 25px; display: block; }
+
+/* 모달 디자인 추가 */
+.open-modal { margin-top: 20px; padding: 8px 18px; background: #f4f4f4; border: 1px solid #ddd; border-radius: 20px; cursor: pointer; transition: 0.3s; font-size: 0.85rem; font-weight: 700; color: #002c5f; }
+.open-modal:hover { background: #002c5f; color: #fff; }
+
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); display: flex; justify-content: center; align-items: center; z-index: 2000; opacity: 0; pointer-events: none; transition: 0.3s; }
+.modal-overlay.active { opacity: 1; pointer-events: auto; }
+.modal-content { background: #fff; width: 90%; max-width: 500px; padding: 40px; border-radius: 15px; position: relative; transform: translateY(20px); transition: 0.3s; }
+.modal-overlay.active .modal-content { transform: translateY(0); }
+.close-modal { position: absolute; top: 15px; right: 20px; font-size: 2rem; border: none; background: none; cursor: pointer; color: #999; }
+#modal-body h3 { color: #002c5f; margin-bottom: 20px; border-bottom: 2px solid #d4af37; display: inline-block; padding-bottom: 5px; font-size: 1.4rem; }
+#modal-body p { line-height: 1.8; color: #555; text-align: justify; }
 
 /* 디지털 명함 */
 .location { padding: 100px 0; background: #fff; }
