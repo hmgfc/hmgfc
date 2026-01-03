@@ -75,7 +75,7 @@ header nav ul li a:hover { color: #d4af37; }
 .service-item:hover { transform: translateY(-10px); border-top: 4px solid #002c5f; box-shadow: 0 15px 35px rgba(0,0,0,0.12); }
 .service-item .icon { font-size: 3rem; margin-bottom: 25px; display: block; }
 
-/* 모달 디자인 추가 */
+/* 모달 디자인 */
 .open-modal { margin-top: 20px; padding: 8px 18px; background: #f4f4f4; border: 1px solid #ddd; border-radius: 20px; cursor: pointer; transition: 0.3s; font-size: 0.85rem; font-weight: 700; color: #002c5f; }
 .open-modal:hover { background: #002c5f; color: #fff; }
 
