@@ -60,11 +60,11 @@ header nav ul li a:hover { color: #d4af37; }
 .section-title { font-size: 2.2rem; margin-bottom: 50px; color: #002c5f; text-align: center; position: relative; padding-bottom: 15px; }
 .section-title::after { content: ''; width: 45px; height: 3px; background: #d4af37; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
 
-/* 인사말 */
+/* 인사말 - 기본값은 양쪽 정렬 */
 .about { padding: 80px 0; background: #fff; }
 .about-content { max-width: 850px; margin: 0 auto; }
 .greeting-text .main-greeting { font-size: 1.4rem; font-weight: 700; color: #002c5f; text-align: center; margin-bottom: 30px; }
-.greeting-text .unified-paragraph { font-size: 1.1rem; line-height: 2.0; margin-bottom: 20px; text-align: justify; word-break: keep-all; }
+.greeting-text .unified-paragraph { font-size: 1.1rem; line-height: 2.0; margin-bottom: 20px; text-align: justify; word-break: break-all; }
 .thanks-text { margin-top: 15px; font-weight: inherit; } 
 
 .signature { text-align: right; margin-top: 40px; padding-top: 25px; border-top: 1px solid #eee; }
@@ -77,6 +77,7 @@ header nav ul li a:hover { color: #d4af37; }
 .service-item { background: #fff; padding: 40px 30px; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.06); text-align: center; transition: 0.3s ease; border-top: 4px solid transparent; }
 .service-item:hover { transform: translateY(-10px); border-top: 4px solid #002c5f; box-shadow: 0 15px 35px rgba(0,0,0,0.12); }
 .service-item .icon { font-size: 3rem; margin-bottom: 25px; display: block; }
+.service-item p { text-align: center; word-break: keep-all; }
 
 /* 모달 디자인 */
 .open-modal { margin-top: 20px; padding: 8px 18px; background: #f4f4f4; border: 1px solid #ddd; border-radius: 20px; cursor: pointer; transition: 0.3s; font-size: 0.85rem; font-weight: 700; color: #002c5f; }
@@ -97,7 +98,7 @@ ol.modal-list { counter-reset: item; }
 ol.modal-list li { padding-left: 25px; }
 ol.modal-list li::before { content: counter(item) ". "; counter-increment: item; position: absolute; left: 0; color: #d4af37; font-weight: 700; }
 ul.modal-list li::before { content: "•"; position: absolute; left: 0; color: #d4af37; font-weight: 700; }
-#modal-body p { line-height: 1.8; color: #555; text-align: justify; }
+#modal-body p { line-height: 1.8; color: #555; text-align: justify; word-break: break-all; }
 
 /* 디지털 명함 */
 .location { padding: 100px 0; background: #fff; }
@@ -132,13 +133,14 @@ footer h3 { color: #fff; margin-bottom: 10px; font-size: 1.3rem; }
 .footer-info .footer-line { margin-bottom: 5px; font-size: 0.9rem; color: #888; }
 .footer-info .copy { margin-top: 8px; color: #666; font-size: 0.85rem; }
 
-/* 반응형 */
+/* 반응형 설정 */
 @media (max-width: 992px) {
     .service-grid { grid-template-columns: 1fr; }
     .location-container { flex-direction: column; }
     .biz-card { flex-direction: column; min-height: auto; }
     .card-left { border-right: none; border-bottom: 1px solid #eee; padding: 30px 20px; }
 }
+
 @media (max-width: 768px) { 
     header .container { flex-direction: column; gap: 15px; }
     header nav ul li { margin-left: 10px; margin-right: 10px; font-size: 0.9rem; }
@@ -146,4 +148,12 @@ footer h3 { color: #fff; margin-bottom: 10px; font-size: 1.3rem; }
     .hero p { font-size: 1.2rem; }
     .hero-btn { width: 100%; max-width: 280px; margin: 0 auto; }
     .name-wrap { font-size: 1.5rem; letter-spacing: 2px; }
+
+    /* 핵심 수정: 모바일에서만 왼쪽 정렬로 변경하여 벌어짐 해결 */
+    .greeting-text .unified-paragraph, #modal-body p {
+        text-align: left;
+    }
+    .service-item p {
+        text-align: center;
+    }
 }
