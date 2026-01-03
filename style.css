@@ -60,7 +60,7 @@ header nav ul li a:hover { color: #d4af37; }
 .section-title { font-size: 2.2rem; margin-bottom: 50px; color: #002c5f; text-align: center; position: relative; padding-bottom: 15px; }
 .section-title::after { content: ''; width: 45px; height: 3px; background: #d4af37; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
 
-/* 인사말 - 기본값은 양쪽 정렬 */
+/* 인사말 */
 .about { padding: 80px 0; background: #fff; }
 .about-content { max-width: 850px; margin: 0 auto; }
 .greeting-text .main-greeting { font-size: 1.4rem; font-weight: 700; color: #002c5f; text-align: center; margin-bottom: 30px; }
@@ -133,7 +133,7 @@ footer h3 { color: #fff; margin-bottom: 10px; font-size: 1.3rem; }
 .footer-info .footer-line { margin-bottom: 5px; font-size: 0.9rem; color: #888; }
 .footer-info .copy { margin-top: 8px; color: #666; font-size: 0.85rem; }
 
-/* 반응형 설정 */
+/* 반응형 */
 @media (max-width: 992px) {
     .service-grid { grid-template-columns: 1fr; }
     .location-container { flex-direction: column; }
@@ -149,7 +149,6 @@ footer h3 { color: #fff; margin-bottom: 10px; font-size: 1.3rem; }
     .hero-btn { width: 100%; max-width: 280px; margin: 0 auto; }
     .name-wrap { font-size: 1.5rem; letter-spacing: 2px; }
 
-    /* 핵심 수정: 모바일에서만 왼쪽 정렬로 변경하여 벌어짐 해결 */
     .greeting-text .unified-paragraph, #modal-body p {
         text-align: left;
     }
