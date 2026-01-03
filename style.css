@@ -57,7 +57,7 @@ header nav ul li a:hover { color: #d4af37; }
 .section-title { font-size: 2.2rem; margin-bottom: 50px; color: #002c5f; text-align: center; position: relative; padding-bottom: 15px; }
 .section-title::after { content: ''; width: 45px; height: 3px; background: #d4af37; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
 
-/* 인사말 가독성 설정 */
+/* 인사말 - 기본은 양쪽 정렬 (PC용) */
 .about { padding: 80px 0; background: #fff; }
 .about-content { max-width: 850px; margin: 0 auto; }
 .greeting-text .main-greeting { font-size: 1.4rem; font-weight: 700; color: #002c5f; text-align: center; margin-bottom: 30px; }
@@ -132,7 +132,7 @@ footer h3 { color: #fff; margin-bottom: 10px; font-size: 1.3rem; }
 .footer-info .footer-line { margin-bottom: 5px; font-size: 0.9rem; color: #888; }
 .footer-info .copy { margin-top: 8px; color: #666; font-size: 0.85rem; }
 
-/* 반응형 */
+/* 반응형 설정 */
 @media (max-width: 992px) {
     .service-grid { grid-template-columns: 1fr; }
     .location-container { flex-direction: column; }
@@ -149,6 +149,14 @@ footer h3 { color: #fff; margin-bottom: 10px; font-size: 1.3rem; }
     .hero h2 { font-size: 1.8rem; } 
     .hero p { font-size: 1.2rem; }
     .hero-btn { min-width: 0 !important; width: 100%; max-width: 280px; margin: 0 auto; }
+    
+    /* 모바일에서 인사말 왼쪽 정렬로 변경 (자간 문제 해결) */
+    .greeting-text .unified-paragraph { 
+        text-align: left; 
+        line-height: 1.8; 
+        font-size: 1.05rem;
+    }
+    
     .card-identity h4 { font-size: 1.6rem; }
     .name-wrap { font-size: 1.5rem; letter-spacing: 2px; }
 }
