@@ -18,7 +18,11 @@ ul { list-style: none; }
 header { background: #fff; border-bottom: 2px solid #002c5f; padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); width: 100%; }
 header .container { display: flex; justify-content: space-between; align-items: center; }
 header h1 { font-size: 1.3rem; font-weight: 700; flex-shrink: 0; }
-.logo-link { display: flex; align-items: center; gap: 10px; }
+
+/* 좌측 로고 텍스트 네이비 호버 효과 */
+.logo-link { display: flex; align-items: center; gap: 10px; color: inherit; transition: color 0.3s ease; }
+.logo-link:hover { color: #002c5f; } /* 마우스 올렸을 때 메인 네이비 컬러로 변경 */
+
 .header-logo { height: 35px; width: auto; object-fit: contain; }
 header nav { margin-left: 10px; }
 header nav ul { display: flex; align-items: center; }
@@ -131,7 +135,6 @@ ul.modal-list li::before { content: "•"; position: absolute; left: 0; color: #
 .card-contacts li { font-size: 1.1rem; font-weight: 400; }
 .card-contacts .label { display: inline-block; width: 65px; font-weight: 700; color: #d4af37; }
 
-/* 디지털 명함 내 텍스트 링크 스타일 (밑줄 없음) */
 .card-link { text-decoration: none !important; color: inherit; transition: opacity 0.3s; }
 .card-link:hover { opacity: 0.8; }
 
