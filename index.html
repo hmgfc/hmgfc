@@ -12,6 +12,16 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
+        /* 부드러운 스크롤 효과 추가 */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* [수정] PC 기준: 헤더 높이만큼 여백을 주어 제목이 헤더 바로 밑에 오게 합니다. */
+        section {
+            scroll-margin-top: 80px; 
+        }
+
         /* 헤더 레이아웃 최적화 */
         header {
             background-color: #fff;
@@ -50,13 +60,18 @@
         /* 텍스트 컬러를 메뉴와 동일하게 공통 컬러로 수정 */
         .header-center-badge span {
             font-size: 13px;
-            color: inherit; /* 부모 또는 공통 설정 컬러를 따르도록 변경 */
+            color: inherit; 
             font-weight: 600;
             letter-spacing: -0.5px;
         }
 
         /* 모바일 대응 (1024px 이하에서 3줄 배열) */
         @media (max-width: 1024px) {
+            /* [수정] 모바일: 헤더가 3줄이 되어 높아진 만큼(약 145px) 여백을 늘려 제목을 아래로 내립니다. */
+            section {
+                scroll-margin-top: 145px;
+            }
+
             header {
                 padding: 10px 0;
             }
